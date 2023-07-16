@@ -10,7 +10,7 @@ const ViewPage = () => {
 
   const { userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`).then((response) =>
+    fetch(`https://mern-backend-api-seven.vercel.app/post/${id}`).then((response) =>
       response.json().then((postInfo) => setPostPage(postInfo))
     );
   }, []);
