@@ -20,7 +20,7 @@ const EditPost = () => {
   const [files, setFiles] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/post/" + id).then((response) =>
+    fetch("https://mern-backend-api-seven.vercel.app/post/" + id).then((response) =>
       response.json().then((postInfo) => {
         setTitle(postInfo.title);
         setSummary(postInfo.summary);
@@ -41,7 +41,7 @@ const EditPost = () => {
       data.set("file", files?.[0]);
     }
 
-    const response = await fetch("http://localhost:4000/post", {
+    const response = await fetch("https://mern-backend-api-seven.vercel.app/post", {
       method: "PUT",
       body: data,
       credentials: "include",
